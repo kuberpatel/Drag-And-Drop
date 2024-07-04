@@ -1,0 +1,180 @@
+/* Carousel Styles */
+/* The main container for the carousel, positioned fixed to cover the entire viewport */
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Places the carousel behind other elements */
+    overflow: hidden; /* Hides any overflowing content */
+}
+
+/* Container for carousel items, displayed as a flexbox */
+.carousel-items {
+    display: flex;
+    width: 200%; /* Assuming 2 images, adjust width as per number of images */
+    animation: slide 10s infinite; /* Animates the sliding of images */
+}
+
+/* Individual carousel item, each takes up full viewport width and height */
+.carousel-item {
+    flex: 1;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover; /* Ensures the background image covers the entire item */
+    background-position: center; /* Centers the background image */
+}
+
+/* Carousel Animation */
+/* Defines the sliding animation for the carousel */
+@keyframes slide {
+    0%, 50% {
+        transform: translateX(0%); /* Initial and halfway position */
+    }
+    50.1%, 100% {
+        transform: translateX(-50%); /* Final position, shifts carousel items */
+    }
+}
+
+/* UI Brighter Styles */
+/* Sets the overall body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFD700; /* Bright Yellow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styles for the main app container */
+.app-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent White */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    width: 80%;
+    max-width: 500px; /* Limits the maximum width */
+}
+
+/* Styles for the main heading */
+h1 {
+    text-align: center;
+    color: #FF4500; /* Bright Orange */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Styles for the dropzone */
+.dropzone {
+    cursor: pointer;
+    padding: 60px 40px;
+    background: #FFFAF0; /* Creamy background */
+    border: 2px dashed #FF6347; /* Dashed border in Tomato Red */
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.3s ease-in-out; /* Smooth background change */
+    position: relative;
+}
+
+/* Hover effect for the dropzone */
+.dropzone:hover {
+    background: #e6e6e7; /* Lighter background on hover */
+}
+
+/* Styles for paragraph inside the dropzone */
+.dropzone p {
+    color: #160f0f;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* Styles for span inside the paragraph */
+.dropzone p span {
+    color: #fc6146; /* Tomato Red */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styles for the icon inside the dropzone */
+.dropzone i {
+    font-size: 40px;
+    color: #f55d42; /* Tomato Red */
+    margin-bottom: 15px;
+}
+
+/* Styles for the file list */
+.file-list {
+    margin-top: 20px; /* Space above the file list */
+}
+
+/* Styles for each file name container */
+.file-name {
+    background: #FFFACD; /* LemonChiffon background */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px; /* Space above each file name */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    transition: background 0.3s ease-in-out; /* Smooth background change */
+}
+
+/* Hover effect for each file name */
+.file-name:hover {
+    background: #E1E3E8; /* Lighter background on hover */
+}
+
+/* Styles for the image thumbnails */
+img.thumbnail {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 15px;
+    border-radius: 50%; /* Makes the image circular */
+}
+
+/* Animation for elements fading in and moving up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Starts below the final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at the final position */
+    }
+}
+
+/* Applying fadeInUp animation to dropzone and file-name */
+.dropzone, .file-name {
+    animation: fadeInUp 0.5s forwards; /* 0.5s duration, runs once and holds the final state */
+}
+
+/* Styles for the description added icon */
+.des-added {
+    margin-left: auto; /* Pushes the icon to the right end */
+    cursor: pointer;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 50%; /* Makes it circular */
+}
+
+/* Styles for the delete icon */
+.delete-icon {
+    margin-left: auto; /* Pushes the icon to the right end */
+    cursor: pointer;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 50%; /* Makes it circular */
+}
+
+/* Styles for the textarea */
+textarea {
+    width: 100%; /* Full width */
+    padding: 5px;
+    margin-top: 10px; /* Space above the textarea */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Allows vertical resizing only */
+}
